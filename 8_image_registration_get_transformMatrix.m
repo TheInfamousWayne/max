@@ -20,9 +20,9 @@ function [M, Rot] = getTransformMatrix(info1, info2)
     % and then to the coordinate space of the second image
     % This is done by multiplying with the inverse of Mtf to convert patient
     % coordinates back into the image coordinates of the second image.
-    M = (Mtf \ Mdti);
+    M = (Mtf \ Mdti)';
 
     % Calculate the rotation matrix needed to rotate from the coordinate space 
     % of the first image to the coordinate space of the second image
-    Rot = (Rtf \ Rdti);
+    Rot = (Rtf \ Rdti)';
 end

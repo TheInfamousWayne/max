@@ -70,7 +70,7 @@ WaitMessage = parfor_wait(N, 'Waitbar', true);
 % Start a parallel loop to process each voxel
 parfor ii = 1:length(T1)
     if mask(ii) ~= 0
-        voxelValue = img(ii, :);
+        voxelValue = img(ii, :)';
         % Fit the model to the voxel data
         fitResult = lsqcurvefit(F, SP, TR, voxelValue, LB, UB, options);
         % Store the fitted T1 and M0 values

@@ -44,7 +44,7 @@ WaitMessage = parfor_wait(N, 'Waitbar', true);
 % Start a parallel loop to process each voxel
 parfor i = 1:N
     % Extract the log of the signal intensity for each voxel over time
-    Y = logMatrix(i, :);
+    Y = logMatrix(i, :)';
     % Perform the linear fit to find 'a' and 'b'
     A = X \ Y;
     As(i) = A(2);
